@@ -10,6 +10,10 @@
 本项目使用纯原生 JavaScript (ES6+) 和 HTML5 Canvas 技术，在现代浏览器中基本还原了经典的《兔子波比2》。相比于一代，本作主要是增加了**冰面滑行**、**激光反射**等机制。
 
 不仅还原了视觉和逻辑，还内置了基于 C++ A* 算法生成的演示功能。
+
+## 🌏 在线试玩
+https://4454aa.github.io/BobbyCarrot2_html_version/
+
 ## 🎮 控制 | Controls
 ### PC 键盘
 
