@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Bobby Carrot 2: Winterland</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="menu-screen">
+        <h1 style="color:#2980b9;">BOBBY CARROT 2</h1>
+        <div class="save-controls">
+            <button class="btn-main" onclick="app.exportSave()">📤 导出存档</button>
+            <button class="btn-main" onclick="document.getElementById('file-input').click()">📥 导入存档</button>
+            <input type="file" id="file-input" style="display:none" onchange="app.importSave(this)">
+        </div>
+        <div class="level-grid-wrapper">
+            <div class="level-grid" id="level-grid"></div>
+        </div>
+    </div>
+    <div id="game-screen" class="hidden">
+        <div id="hud">
+            <div class="hud-left">
+                <div class="hud-row">
+                    <span>LEVEL <b id="disp-level">1</b></span>
+                    <span style="margin-left:10px">★ <b id="disp-stars">0/0</b></span>
+                </div>
+                <div class="keys-panel">
+                    <div id="k-s" class="key-dot s"></div>
+                    <div id="k-g" class="key-dot g"></div>
+                    <div id="k-c" class="key-dot c"></div>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="hud-stat">👣 <b id="disp-steps">0</b></div>
+                <div class="hud-stat">⏱ <b id="disp-time">00:00</b></div>
+                <div class="hud-controls">
+                    <button id="btn-speed" class="btn-mini" onclick="app.toggleSpeed()">x1</button>
+                    <button id="btn-pause" class="btn-mini" onclick="app.togglePause()">II</button>
+                </div>
+            </div>
+        </div>
+        <div id="game-container">
+            <canvas id="gameCanvas" width="256" height="256"></canvas>
+        </div>
+        <div id="controls">
+            <div class="dpad">
+                <button id="btn-up" class="btn up">▲</button>
+                <button id="btn-left" class="btn left">◀</button>
+                <button id="btn-down" class="btn down">▼</button>
+                <button id="btn-right" class="btn right">▶</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="hidden">
+        <div class="msg-box">
+            <h2 id="msg-title">提示</h2>
+            <p id="msg-text">内容</p>
+            <div style="margin-top:20px; display:flex; gap:10px; justify-content:center;">
+                <button onclick="app.showMenu()">菜单</button>
+                <button id="btn-retry" onclick="app.restart()">重试</button>
+                <button id="btn-next" onclick="app.nextLevel()">下一关</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/levels.js"></script>
+    <script src="js/solutions.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
