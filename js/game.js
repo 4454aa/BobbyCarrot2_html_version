@@ -573,7 +573,7 @@ const Game = {
         let path = [];
         let cx = this.state.bobby.gridX;
         let cy = this.state.bobby.gridY;
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 300; i++) {
             cx += VEC[dir][0];
             cy += VEC[dir][1];
             if (cx < 0 || cx >= this.state.width || cy < 0 || cy >= this.state.height) break;
